@@ -84,13 +84,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="col col-4">
 								<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Athletic (20)</label>
 							</div>
-							<div class="col col-4">
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Athletic Shoes (48)</label>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Casual (45)</label>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Casual (45)</label>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Other (1)</label>
-						    </div>
 						 </div>
+				
         
 		</div>
 		<div class="cont span_2_of_3">
@@ -110,21 +105,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                </div>
     		</div>
 	          <div class="pager">   
-	           <div class="limiter visible-desktop">
-	            <label>Show</label>
-	            <select>
-	                            <option value="" selected="selected">
-	                    9                </option>
-	                            <option value="">
-	                    15                </option>
-	                            <option value="">
-	                    30                </option>
-	                        </select> per page        
-	             </div>
 	       		<ul class="dc_pagination dc_paginationA dc_paginationA06">
-				    <li><a href="#" class="previous">Pages</a></li>
-				    <li><a href="#">1</a></li>
-				    <li><a href="#">2</a></li>
+				    <li><a href="#" class="previous"></a></li>
+				  <%= will_paginate @products%>
 			  	</ul>
 		   		<div class="clear"></div>
 	    	</div>
