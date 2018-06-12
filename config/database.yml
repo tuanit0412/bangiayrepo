@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: bangiay
-  username: tuanlm
-  password: 123LMTlmt
+  username: vinhnt
+  password: vinhga123
