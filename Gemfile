@@ -62,3 +62,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'will_paginate', '~>3.1','>=3.1.5'
 gem "paperclip", "~> 6.0.0"
+gem "ransack"
+gem 'simple_form'
+gem "devise"

@@ -603,8 +603,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</li>
 				<li><a class="color10" href="#">Running</a></li>
 				<li><a class="color11" href="#">Originals</a></li>
-				<li><a class="color12" href="#">Basketball</a></li>
+				<li><a class="color12">	
+
+				<%= search_form_for @search, url: search_stores_path, method: :post do |f| %>
+				<div class="field">
+				<%= f.text_field :title_cont %>
+				<%= f.submit "Search" %>
+				</div>
+				
+				<% end %> </a></li>
+		
 		   </ul>
+		
 		   <div class="clear"></div>
      	</div>
        </div>
