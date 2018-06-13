@@ -74,19 +74,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="logo">
 			<a href="/"><img src="/assets/logo.png" alt=""/></a>
 	    </div>
-	    <div class="cssmenu">
+		<div class="cssmenu">
 		   <ul>
-			 <li class="active"><a href="register.html">Sign up & Save</a></li> 
+			 <li class="active"><a href="#">Sign up</a></li> 
 			 <li><a href="store/index">Store Locator</a></li> 
-			 <li><a href="login.html">My Account</a></li> 
-			 <li><a href="checkout.html">CheckOut</a></li> 
+			 <li><a href="#">CheckOut</a></li> 
 		   </ul>
+		   <%= search_form_for @search, url: search_stores_path, method: :post do |f| %>
+				<div class="field">
+				<%= f.text_field :title_cont %>
+				<%= f.submit "Search" %>
+				</div>
 		</div>
-		<ul class="icon2 sub-icon2 profile_img">
+		<ul class="icon2 sub-icon2 profile_img" >
 			<li><a class="active-icon c2" href="#"><img src="/assets/iconcart.jpg"/> </a>
-				<ul class="sub-icon2 list">
+				<ul class="sub-icon2 list" >
 					<li><h3>Products</h3><a href=""></a></li>
-					<li><p>Lorem ipsum dolor sit amet, consectetuer  <a href="">adipiscing elit, sed diam</a></p></li>
+					<li><p>Giỏ hàng của bạn  <a href=""></a></p></li>
 				</ul>
 			</li>
 		</ul>
@@ -98,7 +102,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
    		<!-- start header menu -->
 		<ul class="megamenu skyblue">
 		    <li><a class="color1" href="#">Home</a></li>
-			<li class="grid"><a class="color2" href="#">Men</a>
+			<li class="grid"><a class="color2" href="">Men</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
@@ -377,7 +381,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</div>
 				</li>
-				<li><a class="color7" href="#">Customize</a>
+				<!-- <li><a class="color7" href="#">Customize</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
@@ -467,8 +471,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="col1"></div>
 					</div>
     				</div>
-				</li>
-				<li><a class="color8" href="#">Shop</a>
+				</li> -->
+				<!-- <li><a class="color8" href="#">Shop</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
@@ -509,8 +513,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="col1"></div>
 					</div>
 				</div>
-				</li>
-				<li><a class="color9" href="#">Football</a>
+				</li> -->
+				<!-- <li><a class="color9" href="#">Football</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
@@ -602,14 +606,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     				</div>
 				</li>
 				<li><a class="color10" href="#">Running</a></li>
-				<li><a class="color11" href="#">Originals</a></li>
+				<li><a class="color11" href="#">Originals</a></li> -->
 				<li><a class="color12">	
 
-				<%= search_form_for @search, url: search_stores_path, method: :post do |f| %>
-				<div class="field">
-				<%= f.text_field :title_cont %>
-				<%= f.submit "Search" %>
-				</div>
+				
 				
 				<% end %> </a></li>
 		

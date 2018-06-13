@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_12_102844) do
+ActiveRecord::Schema.define(version: 2018_06_13_041621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,18 +20,24 @@ ActiveRecord::Schema.define(version: 2018_06_12_102844) do
     t.text "description"
     t.string "image_url"
     t.decimal "price"
+    t.bigint "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "sex"
-    t.string "styled"
     t.string "image_file_name"
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.index ["type_id"], name: "index_products_on_type_id"
   end
 
   create_table "tests", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "typename"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,4 +50,5 @@ ActiveRecord::Schema.define(version: 2018_06_12_102844) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "products", "types"
 end

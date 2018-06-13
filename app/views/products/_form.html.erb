@@ -17,8 +17,13 @@
   </div>
 
   <div class="field">
+    <%= form.label :type %>
+    <%= form.select :type_id, options_from_collection_for_select(Type.all, :id, :typename) %>
+  </div>
+
+  <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, rows: 10, cols: 60 %>
   </div>
 
   <div class="field">

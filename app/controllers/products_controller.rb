@@ -5,20 +5,28 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all.paginate(page: params[:page], per_page: 10)
+    @search = Product.search(params[:q])
+    @products = @search.result
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    @search = Product.search(params[:q])
+    @products = @search.result
   end
 
   # GET /products/new
   def new
     @product = Product.new
+    @search = Product.search(params[:q])
+    @products = @search.result
   end
 
   # GET /products/1/edit
   def edit
+    @search = Product.search(params[:q])
+    @products = @search.result
   end
 
   # POST /products
@@ -70,6 +78,6 @@ class ProductsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def product_params
-    params.require(:product).permit(:title, :description, :image_url, :price, :image)
+    params.require(:product).permit(:title, :description, :image_url, :price, :image, :type_id)
   end
 end

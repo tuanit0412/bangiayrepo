@@ -5,8 +5,6 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-    @search = Product.search(params[:q])
-    @products = @search.result
   end
 
   # GET /users/1
