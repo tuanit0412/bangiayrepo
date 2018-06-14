@@ -79,12 +79,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
          <div class="wrap">
      	    <div class="rsidebar span_1_of_left">
 				   <section  class="sky-form">
-                   	  <h4>Occasion</h4>
+                   	  <!-- <h4>Occasion</h4>
 						<div class="row row1 scroll-pane">
 							<div class="col col-4">
 								<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Athletic (20)</label>
 							</div>
-						 </div>
+						 </div> -->
+						 <div id="cart"
+							 <% if @cart.line_items.empty? %>
+									style="display: none"
+									<% end %>
+						 >
+								<%= render @cart %>
+							</div>
 				
         
 		</div>
@@ -116,7 +123,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	       </div> <% @products.each do |product| %>
 				   <div class = "box1">
                     
-				    <div class="col_1_of_single1 span_1_of_single1"><a href="single.html">
+				    <div class="col_1_of_single1 span_1_of_single1"><a>
 				     <div class="view1 view-fifth1">
 				  	  <div class="top_box">
 					  	<h3 class="m_1"><%= product.title %></h3>
@@ -134,17 +141,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		    	      </span>
 						 <ul class="list2">
 						  <li>
-						  	<img src="/assets/plus.png" alt=""/>
-						  	<ul class="icon1 sub-icon1 profile_img">
-							  <li><a class="active-icon c1" href="#">Add To Bag </a>
-								<ul class="sub-icon1 list">
-									<li><h3>sed diam nonummy</h3><a href=""></a></li>
-									<li><p>Lorem ipsum dolor sit amet, consectetuer  <a href="">adipiscing elit, sed diam</a></p></li>
-								</ul>
+							  <img src="/assets/plus.png" alt=""/>
+							  <%= button_to 'Add To Cart', line_items_path(product_id: product), remote: true %>
+						  	<!-- <ul class="icon1 sub-icon1 profile_img">
+							  <li><a class="active-icon c1" > </a> -->
+								
 							  </li>
 							 </ul>
 						   </li>
-					     </ul>
+						 </ul>
+						 
 			    	    <div class="clear"></div>
 			    	</a></div>
                     <% end %>
